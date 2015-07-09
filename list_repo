@@ -1,4 +1,4 @@
 #!/bin/bash
 source server.in
-#find $REPO_ROOT/ -type d -maxdepth 1
-ls $REPO_ROOT
+#find $SERVER_REPO_ROOT/ -type d -maxdepth 1
+ls $SERVER_REPO_ROOT
