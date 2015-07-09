@@ -13,8 +13,9 @@ fi
 
 # check for git version here, 2.4 works. Add ppa if this version is not
 # avaialble on system.
-source bhandar.env
-source bhandar_ssh.in
+SCRIPTDIR='.'
+source $SCRIPTDIR/bhandar.env
+source $SCRIPTDIR/bhandar_ssh.in
 
 SSH="sshpass -e ssh"
 
