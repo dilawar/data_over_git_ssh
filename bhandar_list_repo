@@ -1,0 +1,5 @@
+#!/bin/bash
+source server.in
+source client.in
+$SSH $SERVER_URL list_repo
+
