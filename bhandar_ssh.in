@@ -1,3 +1,7 @@
-pass=`gpg -q -d shares.ncbs.res.in.gpg`
+# Make sure that sourcing this script from anywhere does not break the
+# decryption of gpg file.
+SCRIPT_ROOT=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+export SCRIPT_ROOT
+pass=`gpg -q -d $SCRIPT_ROOT/shares.ncbs.res.in.gpg`
 eval $pass
 SSH="sshpass -e ssh"

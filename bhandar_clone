@@ -19,5 +19,4 @@ source server.in
 # TODO: check version of git. if it is less than 2.4 emit error. GIT_SSH_COMMAND
 # is not supported by older version of git.
 GIT="git"
-
 $GIT clone $SERVER_URL:$SERVER_REPO_ROOT/$REPO_NAME
