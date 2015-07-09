@@ -1,2 +1,3 @@
 pass=`gpg -d shares.ncbs.res.in.gpg`
 eval $pass
+SSH="sshpass -e ssh"
