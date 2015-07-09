@@ -1,4 +1,6 @@
 #!/bin/bash
+# THis is server side script. Should not be executed on host.
+source bhandar.env
 REPONAME="$1"
 REPOPATH=$HOME/repositories/$REPONAME
 mkdir -p $REPOPATH

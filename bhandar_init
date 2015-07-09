@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-set -x 
-set -e
 GIT_VERSION=`git --version`
 if [ ! `which sshpass` ]; then
     echo "Install sshpass utility"
@@ -15,8 +13,10 @@ fi
 
 # check for git version here, 2.4 works. Add ppa if this version is not
 # avaialble on system.
-source shares.env
+source bhandar.env
+source bhandar_ssh.in
+
 SSH="sshpass -e ssh"
 
 # Cool, now everything is setup, create a empty repo on server.
-$SSH $SHARE_USER@$SHARE_HOST '$HOME/.local/bin/create_bare_repo.sh' $REPO_NAME
+$SSH $SHARE_USER@$SHARE_HOST '$HOME/data_over_git_ssh/server_init' $REPO_NAME
