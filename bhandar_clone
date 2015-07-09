@@ -1,0 +1,23 @@
+#!/bin/bash
+set -x
+set -e
+if [ ! "$1" ]; then
+    echo "Usage: $0 repo_name"
+    echo "Use bhandar_list to see the available repositories"
+    exit 1
+else
+    REPO_NAME="$1"
+fi
+
+
+# This source should setup all environment variables required for cloning.
+source client.in
+
+# This file keeps server side variables.
+source server.in
+
+# TODO: check version of git. if it is less than 2.4 emit error. GIT_SSH_COMMAND
+# is not supported by older version of git.
+GIT="git"
+
+$GIT clone $SERVER_URL:$SERVER_REPO_ROOT/$REPO_NAME

@@ -1,0 +1,2 @@
+source bhandar_ssh.in
+GIT_SSH_COMMAND="sshpass -e ssh"
