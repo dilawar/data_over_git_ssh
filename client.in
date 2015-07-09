@@ -1,2 +1,5 @@
 source bhandar_ssh.in
 GIT_SSH_COMMAND="sshpass -e ssh"
+
+#TODO: CHeck here that git version is 2.4 or higher.
+GIT=git

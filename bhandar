@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This script is very generic wrapper over git. It can only work if all
+# argumetnts pass to this scripts are passed to git command.
+source client.in
+$GIT $@
