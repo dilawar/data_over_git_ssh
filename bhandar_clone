@@ -1,6 +1,4 @@
 #!/bin/bash
-set -x
-set -e
 if [ ! "$1" ]; then
     echo "Usage: $0 repo_name"
     echo "Use bhandar_list to see the available repositories"
