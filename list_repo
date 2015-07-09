@@ -1,0 +1,4 @@
+#!/bin/bash
+source bhandar.env
+#find $REPO_ROOT/ -type d -maxdepth 1
+ls $REPO_ROOT
