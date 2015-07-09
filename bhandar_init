@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-GIT_VERSION=`git --version`
-if [ ! `which sshpass` ]; then
-    echo "Install sshpass utility"
-    exit
-fi
-
+source client.in
 REPO_NAME="$1"
 if [ ! $REPO_NAME ]; then
     echo "Usage: $0 repo_name"
@@ -13,11 +8,13 @@ fi
 
 # check for git version here, 2.4 works. Add ppa if this version is not
 # avaialble on system.
-SCRIPTDIR='.'
-source $SCRIPTDIR/bhandar.env
-source $SCRIPTDIR/bhandar_ssh.in
-
-SSH="sshpass -e ssh"
-
+source server.in
 # Cool, now everything is setup, create a empty repo on server.
-$SSH $SHARE_USER@$SHARE_HOST '$HOME/data_over_git_ssh/server_init' $REPO_NAME
+if $SSH $SERVER_URL server_init $REPO_NAME 
+then
+    echo "Created $REPO_NAME successfully on server"
+    echo "You can clone it using bhandar_clone script"
+else
+    echo "Could not create $REPO_NAME on server"
+    exit 1
+fi
