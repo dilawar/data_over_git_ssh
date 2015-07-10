@@ -5,6 +5,9 @@ i=0
 echo "Repositories are on server"
 for d in `ls $SERVER_REPO_ROOT` ; do
 	i=$((i + 1))
-	objects=`cd $SERVER_REPO_ROOT/$d; git count-objects`
-	printf "%-20s %0s\n" "$i. $d" "$objects" 
+	size=`cd $SERVER_REPO_ROOT/$d; du -sh`
+	objects=`cd $SERVER_REPO_ROOT/$d; git count-objects -H`
+	#objs=$objects
+	printf "%-20s %0s\n" "$i. $d" "$size"
+
 done
