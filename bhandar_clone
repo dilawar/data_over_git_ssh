@@ -16,5 +16,6 @@ source server.in
 
 # TODO: check version of git. if it is less than 2.4 emit error. GIT_SSH_COMMAND
 # is not supported by older version of git.
+echo "Using git `git --version`. Make sure you have git-2.4 or later"
 GIT="git"
 $GIT clone $SERVER_URL:$SERVER_REPO_ROOT/$REPO_NAME
