@@ -7,4 +7,6 @@ if [[ "$REPONAME" ]]; then
 	mkdir -p $REPOPATH
 	( cd $REPOPATH && git init --bare )
 	echo "Created bare repo at $REPOPATH"
+else
+	echo "Invalid repo name $REPOPATH"
 fi
