@@ -2,7 +2,11 @@
 # THis is server side script. Should not be executed on host.
 source bhandar.env
 REPONAME="$1"
-REPOPATH=$HOME/repositories/$REPONAME
-mkdir -p $REPOPATH
-( cd $REPOPATH && git init --bare )
-echo "Created bare repo at $REPOPATH"
+if [[ "$REPONAME" ]]; then
+	REPOPATH=$HOME/repositories/$REPONAME
+	mkdir -p $REPOPATH
+	( cd $REPOPATH && git init --bare )
+	echo "Created bare repo at $REPOPATH"
+else
+	echo "Invalid repo name $REPOPATH"
+fi
