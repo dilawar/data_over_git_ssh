@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "One way sync. Host to bhandar"
+source client.in
+source server.in
+sshpass -e rsync -azv ~/Work $SERVER_URL:bhandar/
